@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/menu_bg"
+    android:id="@+id/confirmBottomSheet">
+
+    <TextView
+        android:id="@+id/areYouSureText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Are you sure to confirm payment?"
+        android:gravity="center"
+        android:fontFamily="@font/metropolis_semibold"
+        android:textSize="18sp"
+        android:textColor="@color/mainText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/amountText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Total Amount : 100$"
+        android:fontFamily="@font/metropolis_bold"
+        android:textColor="@color/mainText"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/areYouSureText">
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/btnLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/amountText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/yesBtn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_bg"
+            android:text="Yes"
+            android:layout_marginRight="30dp"
+            android:gravity="center">
+
+        </Button>
+
+        <Button
+            android:id="@+id/noBtn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_bg"
+            android:text="No"
+            android:gravity="center">
+
+        </Button>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnLayout">
+
+    </View>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

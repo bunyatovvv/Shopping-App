@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.teststore.ui.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.example.teststore.ui.CartFragment"
+        android:label="CartFragment" >
+        <action
+            android:id="@+id/action_cartFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/basketFragment"
+        android:name="com.example.teststore.ui.BasketFragment"
+        android:label="BasketFragment" >
+        <action
+            android:id="@+id/action_basketFragment_to_paymenttMethodFragment"
+            app:destination="@id/paymentMethodFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/heartFragment"
+        android:name="com.example.teststore.ui.HeartFragment"
+        android:label="HeartFragment" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.teststore.ui.ProfileFragment"
+        android:label="ProfileFragment" >
+        <action
+            android:id="@+id/action_profileFragment_to_shippingAdressFragment"
+            app:destination="@id/shippingAdressFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        android:name="com.example.teststore.ui.ProductDetailsFragment"
+        android:label="fragment_product_details"
+        tools:layout="@layout/fragment_product_details" >
+        <argument
+            android:name="product"
+            app:argType="com.example.teststore.model.Product" />
+        <action
+            android:id="@+id/action_productDetailsFragment_to_basketFragment"
+            app:destination="@id/basketFragment" />
+        <action
+            android:id="@+id/action_productDetailsFragment_to_shippingAdressFragment"
+            app:destination="@id/shippingAdressFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentMethodFragment"
+        android:name="com.example.teststore.ui.PaymentMethodFragment"
+        android:label="PaymentMethodFragment">
+        <action
+            android:id="@+id/action_paymenttMethodFragment_to_addPaymentFragment"
+            app:destination="@id/addPaymentFragment" />
+        <action
+            android:id="@+id/action_paymentMethodFragment_to_confirmPaymentFragment"
+            app:destination="@id/confirmPaymentFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/addPaymentFragment"
+        android:name="com.example.teststore.ui.AddPaymentFragment"
+        android:label="AddPaymentFragment" />
+    <dialog
+        android:id="@+id/confirmPaymentFragment"
+        android:name="com.example.teststore.ui.ConfirmPaymentFragment"
+        android:label="ConfirmPaymentFragment" />
+    <fragment
+        android:id="@+id/shippingAdressFragment"
+        android:name="com.example.teststore.ui.ShippingAdressFragment"
+        android:label="ShippingAdressFragment" />
+</navigation>
